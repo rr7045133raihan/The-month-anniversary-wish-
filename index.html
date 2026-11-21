@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="bn"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Our Little Story</title>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600&family=Playfair+Display:wght@600;800&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#09070a;--pn:#151016;--red:#9d1739;--gold:#e7c77c;--cream:#f2e6c9;--tx:#f2e6c9}
+body.light{--bg:#f7efe6;--pn:#fff1e2;--tx:#3a1f27}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;height:100%;background:var(--bg);color:var(--tx);font-family:'Hind Siliguri','Noto Sans Bengali','Kalpurush',sans-serif;overflow:hidden;transition:background .5s}
+h1,h2{font-family:'Playfair Display','Hind Siliguri',serif;color:var(--gold);text-align:center;margin:0 0 14px}
+.s{position:fixed;inset:0;display:none;flex-direction:column;align-items:center;padding:64px 14px 96px;overflow-y:auto;text-align:center}
+.s>:first-child{margin-top:auto}.s>:last-child{margin-bottom:auto}
+.s.on{display:flex;animation:fi .9s}
+@keyframes fi{from{opacity:0}to{opacity:1}}
+button{font:inherit;cursor:pointer}
+.btn{background:linear-gradient(135deg,var(--red),#5d0c22);color:var(--cream);border:1px solid var(--gold);border-radius:30px;padding:12px 26px;font-size:17px;box-shadow:0 0 18px #9d173988}
+#bk{position:fixed;left:10px;top:50%;z-index:20;width:42px;height:42px;border-radius:50%;border:1px solid var(--gold);background:#000a;color:var(--gold);font-size:22px;align-items:center;justify-content:center;transform:translateY(-50%)}
+#nx{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);z-index:20}
+.tb{position:fixed;top:12px;right:12px;z-index:30;display:flex;gap:8px}
+.tb button{width:40px;height:40px;border-radius:50%;border:1px solid var(--gold);background:#000a;color:var(--gold);font-size:18px}
+#fx{position:fixed;inset:0;pointer-events:none;z-index:10;overflow:hidden}
+.b{position:fixed;bottom:-40px;animation:up 7s linear forwards;opacity:.85}
+@keyframes up{to{transform:translate(var(--dx,20px),-110vh) rotate(300deg);opacity:0}}
+.heart{font-size:min(55vw,230px);color:#e0123f;text-shadow:0 0 40px #e0123f,0 0 90px #9d1739;animation:hb 1.2s infinite;background:none;border:0;line-height:1}
+@keyframes hb{0%,100%{transform:scale(1)}15%{transform:scale(1.15)}30%{transform:scale(1)}45%{transform:scale(1.1)}}
+.script{font-family:'Dancing Script','Hind Siliguri',cursive;font-size:26px;color:var(--gold);margin:14px 0 4px}
+.sm{opacity:.75;margin:4px}
+.gift{position:relative;width:150px;height:140px;margin:20px auto;animation:rock 1.6s infinite;cursor:pointer;transform-origin:bottom}
+@keyframes rock{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(4deg)}}
+.gift .bd{position:absolute;bottom:0;width:150px;height:95px;background:var(--red);border:2px solid var(--gold);border-radius:6px}
+.gift .lid{position:absolute;top:8px;left:-8px;width:166px;height:42px;background:#b81e45;border:2px solid var(--gold);border-radius:6px;transition:transform 1s,opacity 1s;transform-origin:left}
+.gift i{position:absolute;left:65px;top:0;bottom:0;width:20px;background:var(--gold);opacity:.9}
+.gift.o{animation:none}.gift.o .lid{transform:translateY(-70px) rotate(-30deg);opacity:.5}
+#gt span{display:inline-block;opacity:0;animation:fi 1s forwards;margin:0 4px;font-family:'Playfair Display',serif;color:var(--gold);font-size:22px}
+.card{width:min(88vw,340px);margin:12px auto;perspective:900px;cursor:pointer}
+.card .f{min-height:150px;max-height:62vh;overflow-y:auto;display:flex;padding:20px;background:linear-gradient(145deg,var(--pn),#3a0c1c);border:1px solid var(--gold);border-radius:16px;box-shadow:0 0 22px #9d173977,inset 0 0 18px #e7c77c22;transition:transform .7s;color:var(--cream)}
+.card .f span{margin:auto;white-space:pre-wrap;line-height:1.6;word-break:break-word}
+.card small{display:block;opacity:.5;font-size:12px;margin-top:4px}
+#gal,#fg{position:relative;width:94vw;max-width:520px;height:62vh}
+.ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 1.4s}
+.ph.a{opacity:1}
+.ph img,.empty{max-width:100%;max-height:100%;border:3px solid var(--gold);border-radius:6px;box-shadow:0 0 30px #e7c77c88,0 0 60px #9d173988;animation:zm 9s linear infinite alternate;transform:perspective(800px) rotateY(4deg)}
+.empty{padding:50px 20px;background:var(--pn);color:var(--gold)}
+@keyframes zm{to{scale:1.06}}
+.env{position:relative;width:200px;height:130px;background:#6b1328;border:2px solid var(--gold);border-radius:6px;cursor:pointer;margin:14px auto;display:flex;align-items:center;justify-content:center;font-size:48px;color:var(--gold);box-shadow:0 0 25px #9d1739aa}
+.env.op{opacity:.55}
+.lt{background:linear-gradient(#f6ebd0,#eddcb5);color:#3b2a1a;font-family:'Cormorant Garamond','Hind Siliguri',serif;font-size:19px;line-height:1.8;text-align:left;white-space:pre-wrap;padding:22px;border:3px double #b8923a;border-radius:6px;width:min(92vw,520px);max-height:62vh;overflow-y:auto;box-shadow:0 0 30px #e7c77c66;word-break:break-word}
+#s6{background:#efe0bd;color:#3b2a1a}
+#s6 h2{color:#7a1d33}
+.seal{width:70px;height:70px;border-radius:50%;background:radial-gradient(#c81e3f,#7a0f27);color:#f2e6c9;display:flex;align-items:center;justify-content:center;font-size:30px;margin:10px auto;cursor:pointer;animation:hb 1.5s infinite;border:0}
+#md{position:fixed;inset:0;background:#000d;z-index:50;display:none;flex-direction:column;align-items:center;justify-content:center;padding:14px;gap:12px}
+#md.on{display:flex}
+.hbx{position:relative;font-size:min(80vw,330px);color:#b3113a;text-shadow:0 0 40px #e0123f;line-height:1;animation:hb 1.4s infinite}
+.hbx b{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:min(9vw,34px);color:#fff;text-shadow:0 0 12px #000;font-weight:600;padding-bottom:6%}
+.cake{position:relative;width:240px;height:270px;margin:20px auto;animation:sw 4s ease-in-out infinite}
+@keyframes sw{50%{transform:translateY(-8px) rotate(1.5deg)}}
+.cake div{position:absolute;left:50%;transform:translateX(-50%);border-radius:10px;border:1px solid #fff4}
+.l1{bottom:0;width:240px;height:90px;background:linear-gradient(#a3183c,#5d0c22);display:flex;align-items:center;justify-content:center;color:var(--gold);font-family:'Dancing Script',cursive;font-size:26px;box-shadow:0 14px 25px #000a}
+.l2{bottom:86px;width:180px;height:70px;background:linear-gradient(#f7e9d0,#d9bd94)}
+.l3{bottom:150px;width:120px;height:52px;background:linear-gradient(#ffc9d6,#e07f98)}
+.cn{bottom:200px;width:10px;height:36px;background:repeating-linear-gradient(#fff,#fff 6px,#e0123f 6px,#e0123f 12px)}
+.fl{bottom:236px;width:14px;height:24px;border-radius:50% 50% 50% 50%/60% 60% 40% 40%!important;background:radial-gradient(#fff,#ffb52e 60%,#ff5a1f);border:0!important;box-shadow:0 0 20px #ffb52e;animation:fk .25s infinite alternate;transition:opacity .4s}
+@keyframes fk{to{transform:translateX(-50%) scale(1.15,.9) skew(3deg)}}
+.cake.out .fl{opacity:0}.cake.cut .l1{clip-path:polygon(0 0,100% 0,100% 100%,35% 100%,30% 55%,0 55%)}
+.fin{background:radial-gradient(circle at 50% 120%,#e7c77c55,transparent 70%);animation:gl 6s infinite alternate}
+@keyframes gl{to{background:radial-gradient(circle at 50% 100%,#e7c77c99,transparent 80%)}}
+.hl{color:var(--gold);text-shadow:0 0 14px var(--gold),0 0 30px #e0123f;font-weight:600}
+#fm{max-width:520px;line-height:1.9;font-size:18px;margin-top:12px;white-space:pre-wrap}
+</style></head><body>
+<div id="fx"></div>
+<div class="tb"><button id="mb" title="Music">🔇</button><button id="th" title="Theme">🌙</button></div>
+<button id="bk" class="btn" style="display:none;padding:0">〈</button>
+<button id="nx" class="btn" style="display:none">Next →</button>
+
+<section class="s on" id="s1"><button class="heart" id="hr">♥</button>
+<p class="script" style="font-size:22px">A surprise gift is waited for u jaaaan😘🥰</p><p class="sm">Your special moment starts here</p><p class="sm">Tap the heart to begin</p></section>
+
+<section class="s" id="s2"><div class="gift" id="gf"><div class="bd"></div><i></i><div class="lid"></div></div>
+<button class="btn" id="go">amke open koro</button>
+<p id="g1" class="script"></p><p id="gt"></p></section>
+
+<section class="s" id="s3"><h2>Flash Cards</h2><div id="fc"></div></section>
+
+<section class="s" id="s4"><h2>Memory Gallery</h2><div id="gal"></div></section>
+
+<section class="s" id="s5"><div class="env" id="e5">✉</div><div class="lt" id="l5" style="display:none"></div></section>
+
+<section class="s" id="s6"><h2>♥</h2><button class="seal" id="sl">♥</button><div class="lt" id="l6" style="display:none"></div></section>
+
+<section class="s" id="s7"><h2>Open When…</h2><div id="ev"></div></section>
+<div id="md"><div class="lt" id="mt"></div><button class="btn" id="mc">✕ Close</button></div>
+
+<section class="s" id="s8"><div class="hbx">♥<b id="cd"></b></div></section>
+
+<section class="s" id="s9"><p class="script" style="font-size:21px">valo bashiiiiiiii haapy 3 month anniversary.....</p>
+<div class="cake" id="ck"><div class="fl"></div><div class="cn"></div><div class="l3"></div><div class="l2"></div><div class="l1">Rifat ♥ mariyaa</div></div>
+<div><button class="btn" id="cl">🕯️ Light / Blow</button> <button class="btn" id="cc">🔪 Cut Cake</button></div></section>
+
+<section class="s" id="s10"><h2>তাহার কিছু বাণী</h2><div id="bn"></div></section>
+
+<section class="s fin" id="s11"><div id="fg"></div><p id="fm"><span id="a1"></span><span class="hl" id="a2"></span><span id="a3"></span></p>
+<button class="btn" id="bb" style="margin-top:14px">Back to Beginning</button></section>
+
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+let giftOpen=false,sh,cdI,cdGone=false,last=0,E={};
+/* ---------- TEXTS (এখানে লেখা বদলানো যায়) ---------- */
+const P5=`আজ আকাশে মেঘ নেই, তবু বুকের ভেতর বৃষ্টি।   কারণ অনেকদিন ধরে জমিয়ে রাখা কথাটা আজ বলতে হবে। 😴
+তোমার কাজল কালো চোখের দিকে তাকালে,   আমার সমস্ত ক্লান্তি নিমেষে ভুল হয়ে যায়।   তোমার কণ্ঠস্বর আমার ক্লান্তির ঔষধ।   তোমার উপস্থিতি আমার অস্থিরতার ঠিকানা।
+আমি জানি, আমরা বন্ধু। 🫠  কিন্তু এই বন্ধুত্বের বেড়া টপকে আমার মন  বারবার তোমার কাজল আঁকা চোখের দিকেই ধায়।
+
+তাই আজ, সমস্ত দ্বিধা সরিয়ে বলছি—
+ভালোবাসি!! আমি তোমাকে ভালোবাসি।💓💝
+গভীরভাবে, সম্মানের সাথে, যত্নের সাথে।
+তুমি কি আমার জীবনের কাব্যের শেষ ছত্র হবে?থাকবে তো শেষ পর্যন্ত? পাবো তো পাশে যেকোন পরিস্থিতিতে?😴
+এমনেই বোকা ছোট ছেলেটারে বন্দী করে কি ঠিক করছাও?( না মানে মায়ায়)আন্সার কিন্তু দিয়ো😴`;
+const P6=`আমাকে কতটুকু ভালোবাসো!!!
+
+তুমি কি জানো, নক্ষত্রের পতনেও যে নীরবতা থাকে,
+আমার নিঃশ্বাসের প্রতিটি অন্তরালে তেমনই তোমার নাম?
+সমুদ্রের অতল গহ্বরে যেমন মুক্তা লুকায়িত,
+আমার বক্ষপিঞ্জরের প্রতিটি প্রকোষ্ঠে তেমনই তোমার বসবাস।
+
+তুমি কি বোঝো, কালবৈশাখীর প্রলয়েও যে বৃক্ষ শিকড় আঁকড়ে থাকে,
+আমার অস্তিত্বও তেমনই তোমার অস্তিত্বে বিলীন?
+প্রহরের পর প্রহর গননা করে না যে রাত,
+আমার প্রতীক্ষাও তেমনই কালের সীমা মানে না।
+
+আমাকে কতটুকু ভালোবাসো?
+এ জিজ্ঞাসা নয়, এ আত্মার গভীর আর্তনাদ।
+সহস্র জনমের তপস্যায় যে প্রেম সঞ্চিত হয়,
+আমার হৃদয়ের প্রতিটি স্পন্দনে তারই প্রতিধ্বনি।
+
+তুমি নও আমার অভ্যাস, তুমি আমার আরাধনা।
+তুমি নও ক্ষণিকের মোহ, তুমি আমার অনন্তের ঠিকানা।
+আমার শূন্যতার একমাত্র পূর্ণতা তুমি,
+আমার নৈঃশব্দের একমাত্র কাব্য তুমি।
+
+তাই জিজ্ঞেস করি না "কতটুকু",
+কারণ ভালোবাসার পরিমাপ হয় না অঙ্কে।
+শুধু বলি— আমার সমগ্র সত্তা জুড়ে,
+অনন্তকাল ধরে, শুধুই তুমি।  ♥`;
+const ENV=[
+`Bakko har mane amr hridoyer govirotaii,,tai uccharoner daay theke mukti nilam....tomar protiti sokal hok amr akankhay.....r protiti raat hok amr ses vabnay....amr valobasha hok sobdohin kintu sompurno.....😴
+
+Valobashiii bowww🖤🖤`,
+`Sokaler abirvabe amr citter oboshad durivuto hoii tmr bola valobashi er modde diye....tomar ostitoii amr jiboner mayabi montro....valobashiii jaan....🖤🖤`,
+`Priyo...
+Nispondo nishithe baykul protikkhar ontordohon
+...biran prantoree protitdhonito hoii tomar oboyob....onnuccharito artonad gulo otolante nimojjito...tobuo bicchinno ei ostitto tomar sanniddhe r ovilashi....tai chiti dibosher💌 prothom chithi ta dite na parlew ses chithita amr hok....valobashi booww....♥ ♥
+Iti
+tomar ontim achroiii🥰`,
+`Amr kalnti te buje jawya chokh duto din sese tomakei khuje....valo thakuk valobasha....valobashi jaan....😴`,
+`Tomar sanniddho tei amr prosantii,,tomar onuvuti gular sathei ami kabbo sajaii...amr mugdhota tumi,,tumi amr ovvas...tai protichobi hoye joriye boli(future e🐸)
+Valobashi ragini....🖤shudhuiii tomake😴`,
+`Jiboner somikorone tumi ek durboddho upopaddo....somadhaner otit,,,tobuo cintar nirobicchinnota....somayer aborte khoyesnu ami....tobuo okkhoii tomar sritii....ei nossorotai tumi e amr kobitto.....tai amr tomakei lagbe..... Valobasi jaan..... ♥ ♥ valo thakuk valobasha......`,
+`Valobasi tmn jmn pakhira valo bashe vorke,,,valo basi tmn jmn chad valobashe akash ke....valobash tmn jmn mach valobase jol ke....valobasi nijer sobta diye sob somoy er jonno...😴😴`,
+`Tomay kadte dibo,,,hoito halka hoyar jonno,,,kintu kadte kadte venge jete dibo na....hatta sokto kore dhore thakbo,,hoito hochot khaba kintu pore jete dibo na.... Thakte chai tomar sahosh hoye....valobasi obosese....🖤🖤`,
+`Valobashi,,,valobashi suru theke ses pojonto..vaalooobashiii jaaan....`,
+`naa dekhsaaw kotobar boila nise naa kmn janii naa...
+[⚠ বাকি মূল লেখা এখনো পাওয়া যায়নি — index.html-এ এই লাইনের নিচে হুবহু বসান]`];
+const SORRY=`[⚠ এখানে আপনার মূল Sorry Message হুবহু বসবে — HTML source থেকে কপি করে index.html-এ SORRY অংশে দিন]
+
+Etobaar sry boilaa neyaa taa kii thik bolo jaan....ektu o kii mayaa hoii naa?`;
+const FIN=["Jaaaan.....tmr kisss misss kortasiiii....khub joree ektaaa hug korteee chaaiiii.....tomare jorai dhore joshna dekhe chaa khetee khete ek chadorer niche golpo koraar din taa kmn hobo.? But w8.. Apnre knn boltasiii huu? Apnr kasee toh shudhu sopneei somvob🤧🤧🤧 ","I need bastobee😎😴"," Bastobee je ekhn kobee ashbo...jaihok....ektaa ans daaw.....kmn katlo apnr eii 3 months?amk kii rakhbaa naa taray dibaa🤧😴...bolbaa kintuu......"];
+/* ---------- helpers ---------- */
+function typ(el,t,ms,cb){clearInterval(el._t);el.textContent='';let i=0;const A=[...t];const fin=()=>{clearInterval(el._t);el.textContent=t;cb&&cb();cb=0};el._t=setInterval(()=>{el.textContent+=A[i++];if(i>=A.length)fin()},ms);el.onclick=fin}
+function flip(c,T){if(c._b)return;c._b=1;const f=c.firstChild;f.style.transform='rotateY(90deg)';setTimeout(()=>{c._i=(c._i+1)%T.length;f.firstChild.textContent=T[c._i];f.scrollTop=0;f.style.transform='rotateY(0)';setTimeout(()=>c._b=0,700)},700)}
+function mk(T){const c=document.createElement('div');c.className='card';c._i=0;c.innerHTML='<div class="f"><span></span></div><small>tap ↻</small>';c.firstChild.firstChild.textContent=T[0];c.onclick=()=>flip(c,T);return c}
+function pe(img,n){img.onerror=()=>{if(!img.dataset.t){img.dataset.t=1;img.src=`assets/photos/photo${n}.png`}else{const d=document.createElement('div');d.className='empty';d.textContent='📷 photo'+n;img.replaceWith(d)}}}
+function mkShow(sel){const h=$(sel);for(let n=1;n<=8;n++){const d=document.createElement('div');d.className='ph';const im=new Image();pe(im,n);im.src=`assets/photos/photo${n}.jpg`;d.append(im);h.append(d)}}
+function run(sel){clearInterval(sh);const p=$$(sel+' .ph');let i=0;const f=()=>p.forEach((e,k)=>e.classList.toggle('a',k==i%p.length));f();sh=setInterval(()=>{i++;f()},4200)}
+function burst(n=26){const L=['♥','🌸','✨','🎈','🎊','💖'];for(let i=0;i<n;i++){const s=document.createElement('span');s.className='b';s.textContent=L[i%6];s.style.cssText=`left:${Math.random()*100}vw;--dx:${(Math.random()-.5)*160}px;animation-duration:${3+Math.random()*3}s;font-size:${18+Math.random()*22}px`;$('#fx').append(s);setTimeout(()=>s.remove(),6500)}}
+setInterval(()=>{if($('#fx').children.length<14)burst(1)},1100);
+/* ---------- navigation ---------- */
+let cur=1;
+function go(n){cur=n;$$('.s').forEach(e=>e.classList.toggle('on',e.id=='s'+n));clearInterval(sh);clearInterval(cdI);
+$('#bk').style.display=(n==1||n==11)?'none':'flex';$('#nx').style.display=(n==1||n==11||(n==2&&!giftOpen))?'none':'block';E[n]&&E[n]()}
+$('#nx').onclick=()=>go(cur+1);$('#bk').onclick=()=>go(cur-1);$('#bb').onclick=()=>go(1);
+/* ---------- music (নিজে বানানো soft synth, কোনো copyright নেই) ---------- */
+let ac,mus=0,mg;
+function music(){if(!ac){ac=new(window.AudioContext||window.webkitAudioContext)();mg=ac.createGain();mg.gain.value=.55;mg.connect(ac.destination);
+const ch=[[220,261.6,329.6],[174.6,220,261.6],[130.8,196,261.6],[196,246.9,293.7]];let b=0;
+const nt=(f,t,d,v)=>{const o=ac.createOscillator(),g=ac.createGain();o.frequency.value=f;g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(v,t+.1);g.gain.exponentialRampToValueAtTime(.0001,t+d);o.connect(g);g.connect(mg);o.start(t);o.stop(t+d+.1)};
+setInterval(()=>{if(ac.state!='running')return;const t=ac.currentTime+.05,c=ch[Math.floor(b/8)%4],k=b%8;if(!k)c.forEach(f=>nt(f/2,t,4,.07));nt(c[[0,1,2,1,0,1,2,1][k]]*2,t,1.5,.05);b++},520)}
+ac.resume();mus=1;$('#mb').textContent='🔊'}
+$('#mb').onclick=()=>{if(!ac)return music();if(mus){ac.suspend();mus=0;$('#mb').textContent='🔇'}else{ac.resume();mus=1;$('#mb').textContent='🔊'}};
+$('#th').onclick=()=>{document.body.classList.toggle('light');$('#th').textContent=document.body.classList.contains('light')?'☀️':'🌙'};
+/* ---------- slides ---------- */
+$('#hr').onclick=()=>{if(!ac)music();go(2)};
+function openGift(){if(giftOpen)return;giftOpen=true;$('#gf').classList.add('o');burst(20);
+typ($('#g1'),'deyar moto kisuui naai jaan...amii charaa...amree niyee naaw.....🙃',45,()=>{$('#gt').innerHTML='HAPPY THREE MONTHS ANNIVERSARY JAAAAN...♥'.split(' ').map((w,i)=>`<span style="animation-delay:${i*.6}s">${w}</span>`).join('');setTimeout(()=>{$('#nx').style.display='block'},1500)})}
+$('#gf').onclick=$('#go').onclick=openGift;
+const F=[["apnr sathe amr dekhaa howar din taa kmn cilo?","voyonkor","voyonkor sundor..."],["apnr kon dik taa sob cheyee valo lagee?","kontaai naa...","Cz Sob dik e gadhiii🤭"],["apnr sathe katanoo sobcheye sundor muhurto?","naiii...","protitaa din e sundor😴tai dorkar naai😴"],["3 maseer onuvutii kmn cilo?","voyaanok....","kii vabtasaw huu...r kisu ashboo...."],["Its special","valobashiiiiiiii boowww....janii naa ki hobo....but sob smy tmr suvakankhi hoyee thakte chai.....asa korii seeitaa pabo....kasii thakii baa duree....tumii amr hoyee thako...baa naa.....jiboner sorbotro tmy monee rakhiii....."],["dekhsaw?","kotobaar amree valobashii boiilaa niseee😤amaree kii see bolseee....😑😑"]];
+F.forEach(t=>$('#fc').append(mk(t)));
+mkShow('#gal');mkShow('#fg');E[4]=()=>run('#gal');
+const o5=$('#e5');o5.onclick=()=>{if(o5._d)return;o5._d=1;o5.style.opacity=.5;$('#l5').style.display='block';typ($('#l5'),P5,45)};
+$('#sl').onclick=()=>{if($('#l6')._d)return;$('#l6')._d=1;$('#sl').style.display='none';$('#l6').style.display='block';typ($('#l6'),P6,35)};
+ENV.forEach((m,i)=>{const e=document.createElement('div');e.className='env';e.innerHTML='✉<small style="font-size:14px;position:absolute;bottom:8px">'+(i+1)+'</small>';e.onclick=()=>{$$('.env').forEach(x=>x.classList.remove('op'));e.classList.add('op');$('#mt').textContent=m;$('#mt').scrollTop=0;$('#md').classList.add('on')};$('#ev').append(e)});
+$('#mc').onclick=()=>$('#md').classList.remove('on');
+E[8]=()=>{if(cdGone){$('.hbx').style.visibility='hidden';return}
+cdI=setInterval(()=>{const n=Date.now()+6*36e5,r=864e5-(n%864e5);if(r>last+1e3&&last){cdGone=1;$('.hbx').style.visibility='hidden';clearInterval(cdI);return}last=r;
+const p=x=>String(x).padStart(2,'0');$('#cd').textContent=p(Math.floor(r/36e5))+':'+p(Math.floor(r/6e4)%60)+':'+p(Math.floor(r/1e3)%60)},500)};
+$('#cl').onclick=()=>$('#ck').classList.toggle('out');
+$('#cc').onclick=()=>{$('#ck').classList.add('cut');burst(34);const b=document.createElement('span');b.textContent='🎈';b.style.cssText='position:fixed;left:50%;top:40%;font-size:90px;transform:translate(-50%,-50%);z-index:40;transition:transform .5s';document.body.append(b);setTimeout(()=>{b.textContent='💥';b.style.transform='translate(-50%,-50%) scale(2)'},600);setTimeout(()=>b.remove(),1300);setTimeout(()=>$('#ck').classList.remove('cut'),4000)};
+$('#bn').append(mk(["amii:Koto sundor sokale kotha boltasi...😴samna samni kotha bolte parle valo hoto....din er suruta sei hoito😴🥴","Tahar uttor:Shopnei shomvob...🤧"]),mk(["Ami:valobashiiiiii","Tahar uttor:kotokhaniii🤧🤧"]),mk(["FLIP THIS","Eto valobashii bolar por o se amree kii koraai loo?😤🤧nijei dekhen....",SORRY]));
+E[11]=()=>{run('#fg');$('#a1').textContent=$('#a2').textContent=$('#a3').textContent='';const a=$('#a1'),b=$('#a2'),c=$('#a3');
+typ(a,FIN[0],45,()=>typ(b,FIN[1],60,()=>typ(c,FIN[2],45)))};
+</script></body></html>
